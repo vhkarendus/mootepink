@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mõõtepink</title>
+<meta name="description" content="Harjuta Ohmi ja Kirchhoffi seadust ning multimeetri kasutamist: seadista mõõtja ise ja leia vooluringi rike.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E4C3A'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23F2C230' stroke-width='3'/%3E%3Cpath d='M16 16 L21 10' stroke='%23F2C230' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1 class="brand">Mõõte<span>pink</span></h1>
+  <div class="spacer"></div>
+  <button id="btn-sound" class="tbtn" aria-pressed="false">Heli: väljas</button>
+  <button id="btn-home" class="tbtn hidden">Ülesanded</button>
+</header>
+
+<noscript><p style="padding:24px">See mäng vajab JavaScripti.</p></noscript>
+
+<main id="view-menu" class="menu"></main>
+
+<main id="view-game" class="game hidden">
+  <aside id="side" class="side" aria-label="Ülesanne"></aside>
+  <section class="stage-wrap" aria-label="Mõõtelaud">
+    <div class="stage-top">
+      <div class="metertabs" role="group" aria-label="Mõõtja valik">
+        <span class="hintline">Mõõtja</span>
+        <button class="mtab" data-meter="m1" aria-pressed="false">MM-100</button>
+        <button class="mtab" data-meter="m2" aria-pressed="false">MM-400</button>
+        <button class="mtab" data-meter="m3" aria-pressed="false">MM-700</button>
+      </div>
+      <span id="status" class="hintline grow" role="status"></span>
+      <button id="btn-fuse" class="btn small hidden">Vaheta kaitse</button>
+      <button id="btn-info" class="tbtn">Mõõtja info</button>
+      <button id="btn-clear" class="tbtn">Juhtmed alusele</button>
+    </div>
+    <div id="stage-box">
+      <svg id="stage" viewBox="0 0 1170 700" role="group" aria-label="Vooluring ja multimeeter"></svg>
+    </div>
+  </section>
+</main>
+
+<dialog id="dlg-pred"></dialog>
+<dialog id="dlg-diag"></dialog>
+<dialog id="dlg-result"></dialog>
+<dialog id="dlg-quiz"></dialog>
+<dialog id="dlg-meter"></dialog>
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+<script src="js/meters.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/circuits.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/rules.js"></script>
+<script src="js/draw.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
